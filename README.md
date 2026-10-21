@@ -8,6 +8,8 @@
 
 专为那些"设备自带抖动算法很粗糙（均匀网点/有序抖动）、或干脆没有抖动"的电纸书设计。实测设备：EEGO P4（RK3326, Android 11, KOReader v2024.07）。
 
+> 🎨 **配合食用效果更佳**：同作者的 [EnableTwoBitForEEGOP4](https://github.com/ProLawnMower/EnableTwoBitForEEGOP4) 可一键切换阅读器的「锐利 / 平滑 / 超清」三种显示模式（桌面脚本 / ADB / 纯浏览器 WebUSB），本插件会自动适配当前模式的位深——超清档输出四级灰抖动，锐利/平滑档输出黑白网点。
+
 ## 功能特性
 
 | 特性 | 说明 |
@@ -210,6 +212,16 @@ return {
 | `DENSITY` | 0.25 | 窗口中间灰占比阈值；漏检插图调低，误检文字调高 |
 | `MIN_WINDOWS` | 6 | 连通域最小窗口数；小图标被忽略时调低 |
 | `PAD` | 8 | 检测矩形外扩像素 |
+
+## 配套工具：EnableTwoBitForEEGOP4
+
+[**EnableTwoBitForEEGOP4**](https://github.com/ProLawnMower/EnableTwoBitForEEGOP4)（同作者）——EEGO P4 及同方案墨水屏的显示模式一键切换器：
+
+- **三种模式**：锐利（出厂 1-bit 硬阈值）/ 平滑（1-bit 全局抖动）/ 超清（真 2-bit 灰度，刷新闪屏）
+- **三种形态**：macOS / Windows 桌面脚本、adb 命令、[纯浏览器在线版](https://prolawnmower.github.io/EnableTwoBitForEEGOP4/)（Chrome WebUSB 直连，无需安装）
+- **与本插件的配合**：插件菜单的「抖动深度：自动」会实时读取 `sys.eink.mode`——切到超清档时插图抖动自动切换为四级灰算法，切回锐利/平滑档自动回到黑白网点，无需改设置
+
+典型组合：**超清模式 + 插件四级灰抖动**——文字真灰阶 + 插图高质量误差扩散，电纸书图片观感天花板。
 
 ## 开发背景
 
