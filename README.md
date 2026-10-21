@@ -2,6 +2,8 @@
 
 **B**etter**O**ne**B**it**D**ithering**F**or**K**OReader
 
+![BeforeAndAfter](FS_Dithering.jpeg)
+
 为 KOReader 打造的 Floyd–Steinberg 抖动插件——在 1-bit / 2-bit 墨水屏设备上大幅改善图片观感，**文字零损伤**。
 
 专为那些"设备自带抖动算法很粗糙（均匀网点/有序抖动）、或干脆没有抖动"的电纸书设计。实测设备：EEGO P4（RK3326, Android 11, KOReader v2024.07）。
